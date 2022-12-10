@@ -34,6 +34,17 @@ h3,h2{
     margin-top: 50px;
 }
 
+.fa {
+    text-align: center;
+    text-decoration: none;
+    
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
 .logo img
 {
     height: 90px;
