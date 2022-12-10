@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body
+{
+    margin:0;
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif!important;
+}
+
+header{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: linear-gradient(to right bottom , rgba(160, 7, 255, 0.95),rgba(242, 95, 255, 0.95));
+    z-index: 1;
+}
+
+ul{
+    width: 80%;
+    margin: auto;
+    font-weight: bold;
+    font-size: 20px;
+}
+li{
+    margin-top: 20px;
+}
+h3,h2{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.logo img
+{
+    height: 90px;
+    width: auto;
+}
+
+.logo
+{
+    width: 20%;
+    height: 100%;
+    margin: 0;
+}
+
+.menu {
+	margin: 0;
+	position: relative;
+	width: 80%;
+	height: 90px;
+	border-radius: 8px;
+    font-size: 0;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all .5s ease 0s!important;
+    z-index: 1;
+}
+.menu a {
+	line-height: 90px;
+    height: 100%;
+    width: 25%;
+	font-size: 20px;
+	display: inline-block;
+	position: relative;
+	z-index: 10;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+    cursor: pointer;
+    margin: 0;
+    transition: all .5s ease 0s!important;
+    z-index: 2;
+}
+
+.menu a:hover {
+	font-size: 25px!important;
+    transition: all .5s ease 0s!important;
+}
+
+.menu .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 1;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+.menu .start-home, a:nth-child(1):hover~.animation {
+	width: 25%;
+	margin-left: 0%;
+	background-color:  rgba(0, 145, 155,0.35);
+}
+.menu .start-about, a:nth-child(2):hover~.animation {
+    width: 25%;
+	margin-left: 25%;
+	background-color:  rgba(0, 145, 155,0.35);
+}
+.menu .start-blog, a:nth-child(3):hover~.animation {
+    width: 25%;
+	margin-left: 50%;
+	background-color:  rgba(0, 145, 155,0.35);
+}
+.menu .start-portefolio, a:nth-child(4):hover~.animation {
+    width: 25%;
+	margin-left: 75%;
+	background-color:  rgba(0, 145, 155,0.35);
+}
+.menu .start-contact, a:nth-child(5):hover~.animation {
+    width: 25%;
+	margin-left: 100%;
+	background-color:  rgba(0, 145, 155,0.35);
+}
+.container-1
+{
+    
+    width: 90%;
+    --background-image: url("../img/1.jpg");
+    background-image: linear-gradient(to left top ,rgba(4, 226, 183, 0.95),rgba(95, 135, 255, 0.95));
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    margin: auto;
+    border-radius: 25px;
+    margin-top: 50px;
+    box-shadow: rgba(4, 226, 183, 0.55) 0px 15px 25px;
+    border: 2px solid rgba(4, 226, 182,0.8);
+}
+.container-2
+{
+    
+    width:90%;
+    --background-image: url("../img/2.jpg");
+    background-image: linear-gradient(to right top , rgba(209, 7, 255, 0.95),rgba(0, 200, 214, 0.95));
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    margin: auto;
+    border-radius: 25px;
+    margin-top: 50px;
+    box-shadow: rgba(175, 1, 214, 0.55) 0px 15px 25px;
+    border: 2px solid rgba(175, 1, 214, 0.8);
+}
+
+.container-2:hover{
+    box-shadow: rgba(175, 1, 214, 0.85) 0px 15px 25px;
+    border: 2px solid rgba(175, 1, 214, 1);
+}
+
+.container-1:hover{
+    box-shadow: rgba(4, 226, 183, 0.85) 0px 15px 25px;
+    border: 2px solid rgba(4, 226, 182,1);
+}
+
+.container-3
+{
+    height: 500px;
+    width: 100%;
+    --background-image: url("../img/3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    margin-bottom: 50px;
+}
+.container-4
+{
+    height: 500px;
+    width: 100%;
+    --background-image: url("../img/4.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    margin-bottom: 50px;
+}
+
+
+
+
+.text-1
+{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-top: 0;
+    right: 0;
+    --background-image: linear-gradient(to left top ,rgba(4, 226, 183, 0.6),rgba(23, 35, 71, 0.6));
+    font-size: 20px;
+}
+.text-1:hover
+{
+    width: 100%;
+    --background-image: linear-gradient(to left bottom ,  rgba(23, 35, 71,0.6) ,  rgba(4, 226, 183, 0.6));
+    transition: all .5s ease 0s;
+}
+
+.text-2
+{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-top: 0;
+    left: 0;
+    --background-image: linear-gradient(to right top , rgba(75, 1, 91, 1),rgba(0, 145, 155));
+    font-size: 20px;
+}
+.text-2:hover
+{
+    width: 100%;
+    transition: all .5s ease 0s;
+}
+.text-2 h1{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.column{
+    width: 80%;
+    column-count: 3;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+p
+{
+    font-size:30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:auto;
+    width:80%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+h1
+{
+    font-size: 50px;
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+footer
+{
+    width: 100%;
+    background-color: rgba(255, 255, 255,0);
+    bottom: 0;
+    position: fixed;
+    align-self: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5)
+}
+
+footer p
+{
+    font-size:18px;
+    margin: auto;
+    width: 100%;
+}
+.icon
+{
+    height: 50px;
+    width:50px;
+    background-color: rgba(255, 255, 255,0.5);
+    border-radius: 50px;
+    margin: auto;
+    transition: all .5s ease 0s;
+
+}
+.icon a
+{  
+    line-height: 50px;
+    transition: all .5s ease 0s;
+
+}
+.icon a i{
+    font-size:40px;
+    color:rgba(0, 0, 0, 0.5);
+    transition: all .5s ease 0s;
+
+}
+
+.icon:hover
+{
+    height: 60px;
+    width:60px;
+    background-color: rgba(255, 255, 255,0.5);
+    border-radius: 60px;
+    margin: auto;
+}
+
+.icon a:hover
+{  
+    line-height: 60px
+}
+
+.icon a i:hover
+{
+    font-size:50px;
+    color:rgba(0, 0, 0, 0.5);
+}
+.barras
+{
+    width: 0%;
+    margin-left: 0%;
+    visibility: hidden;
+    transition: all .5s ease 0s;
+}
+.container {
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 30px;
+    width: 20%;
+    align-items: center;
+    height: 100%;
+    margin-left: 40%;
+
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+  .container-x
+  {
+      width: 100%;
+      text-align: center;
+      background-color: rgba(255,152,0,1);
+      background-image: linear-gradient(to left top ,rgba(4, 226, 183, 0.95),rgba(95, 135, 255, 0.95));
+      color: white;
+      padding-bottom: 5%;
+      margin: 0%;
+      margin-top: 50px;
+  }
+  
+  .container-y
+  {
+      width: 100%;
+      text-align: center;
+      background-color: rgba(38,132,156,1);
+      background-image: linear-gradient(to right top , rgba(209, 7, 255, 0.95),rgba(0, 200, 214, 0.95));
+      color: white;
+      padding-bottom: 5%;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0%;
+  }
+  form
+  {
+    width: 45%;
+    padding-bottom:5%;
+    background-color: rgba(255,152,0,1);
+    background-image: linear-gradient(to left top ,rgba(4, 226, 183, 0.95),rgba(95, 135, 255, 0.95));
+    border-bottom-left-radius:20px;
+    border-top-left-radius:20px;
+    margin-left: 5%;
+  }
+  .contacto
+  {
+      width: 45%;
+      background-color: white;
+      margin-right: 5%;
+      border-left: 20px;
+      color: rgba(61, 191, 224,1);
+      border-bottom-right-radius:20px;
+      border-top-right-radius:20px;
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 5%;
+      text-align: left;
+  }
+  .contacto a{
+      margin: auto;
+      width: 90%;
+      text-decoration-line: none;
+      text-decoration: none;
+      color: rgba(61, 191, 224,1);
+      padding-top: 2%;
+      padding-bottom: 2%;
+      transition: all .5s ease 0s;
+  }
+  .contacto a label
+  {
+      width: 100%;
+      height: 100%;
+      font-size: 25px;
+  }
+  label i
+  {
+      font-size: 40px;
+      margin-right: 5%;
+  }
+  .contacto a:hover
+  {
+    color: rgba(75, 1, 91, 1);
+    cursor: pointer;
+
+  }
+
+  input{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 80%;
+    height: 40px;
+    font-size:20px;
+  }
+  input[type=submit]
+  {
+      background-color: rgba(38,132,156,1);
+      background-color:  rgba(209, 7, 255, 0.95);
+      color: white;
+      border: none;
+      transition: all .5s ease 0s;
+  }
+  input[type=submit]:hover
+  {
+      background-color: rgb(38, 124, 146);
+      background-image: linear-gradient(to left top ,rgba(4, 226, 183, 0.95),rgba(95, 135, 255, 0.95));
+      background-color: rgba(95, 135, 255, 0.95);
+      color: white;
+      border: none;
+  }
+@media only screen and (max-width: 1020px) {
+  
+    p
+    {
+    font-size:20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:auto;
+    width:80%;
+    margin-top: 5%;
+    }
+    h1
+    {
+    font-size: 40px;
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    }
+    .barras
+    {
+        width: 20%;
+        margin-left: 40%;
+        visibility:visible;
+    }
+    .menu
+    {
+        width: 1px;
+        visibility: hidden;
+        height: 0px;
+    }
+
+    .menu a
+    {
+        width: 100%;
+        background-color:  rgba(75, 1, 91,0.95);
+        height: 90px;
+    }
+    .menu a:hover
+    {
+        width: 100%;
+        background-color: rgba(0, 200, 214, 0.95);
+        height: 90px;
+    }
+    .container-1,.container-2,.container-3,.container-4
+    {
+    --height: 400px;
+    width: 100%;
+    }
+    form
+    {
+        width: 80%;
+        margin: auto;
+        border-top-left-radius:20px;
+        border-bottom-left-radius:0;
+        border-top-right-radius:20px;
+        
+    }
+    .contacto
+    {
+        width: 80%;
+        margin: auto;
+        border-bottom-right-radius:20px;
+        border-bottom-left-radius:20px;
+        border-top-right-radius:0px;
+    }
+    .contacto h1{
+        text-align: center;
+        width: 100%;
+    }
+
+
+    .contacto a label
+    {
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+    }
+    label i
+    {
+        font-size: 28px;
+        margin-right: 2%;
+    }
+
+  }
+
+  @media only screen and (max-width: 600px) {
+    .column{
+        width: 80%;
+        column-count: 1;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    p
+    {
+    font-size:18px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:auto;
+    width:80%;
+    margin-top: 5%;
+    }
+    h1
+    {
+    font-size: 30px;
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    }
+    .text-1, .text-2
+    {
+    width: 75%;
+    height: 100%;
+    }
+    .container-1,.container-2,.container-3,.container-4
+    {
+    --height: 370px;
+    width: 100%;
+    }
+    
+    .contacto a label
+    {
+        width: 100%;
+        height: 100%;
+        font-size: 15px;
+    }
+  }
