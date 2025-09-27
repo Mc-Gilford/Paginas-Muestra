@@ -188,6 +188,7 @@ img.profile {
 .project-card img {
   width: auto;
   height: 400px;                /* antes 260px → ahora más grande */
+  max-height: 400px;
   object-fit: cover;
   border-radius: 16px;
   margin: auto;
