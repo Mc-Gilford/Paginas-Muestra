@@ -1,0 +1,296 @@
+body {
+  background: linear-gradient(135deg, rgb(3, 3, 24), rgb(25, 12, 31));
+  background-attachment: fixed;
+  color: #f5f5f5;         /* Texto blanco */
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+h1, h2 {
+  color: transparent; /* sin relleno */
+  -webkit-text-stroke: 2px rgba(138, 43, 226, 1); /* borde sólido morado */
+
+  text-shadow: 
+    0 0 8px rgba(138, 43, 226, 0.9),   /* glow cerca */
+    0 0 20px rgba(138, 43, 226, 0.8),  /* halo medio */
+    0 0 40px rgba(138, 43, 226, 0.6);
+    
+}
+
+a.btn {
+  background: rgba(138, 43, 226, 0.5); /* Rosa neón */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.8), 0 0 20px rgba(138, 43, 226, 0.8);
+}
+a.btn:hover {
+  background: rgba(138, 43, 226, 0.8); /* Rosa neón */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 1), 0 0 20px rgba(138, 43, 226, 1);
+}
+img.profile {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(138, 43, 226, 1);
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.8), 0 0 30px rgba(138, 43, 226, 0.8);
+}
+
+.stars{
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: move 120s linear infinite;
+  filter: drop-shadow(0 0 4px rgba(186,85,211,.7));
+}
+.stars-1{ background-image: radial-gradient(2px 2px at 20px 30px, #fff 70%, transparent 72%),
+                           radial-gradient(2px 2px at 140px 80px, #cfa4ff 70%, transparent 72%); 
+          opacity:.6; animation-duration: 140s; }
+.stars-2{ background-image: radial-gradient(2px 2px at 60px 100px, #00bfff 70%, transparent 72%),
+                           radial-gradient(2px 2px at 180px 50px, #fff 70%, transparent 72%);
+          opacity:.5; animation-duration: 110s; }
+.stars-3{ background-image: radial-gradient(1.5px 1.5px at 100px 40px, #fff 70%, transparent 72%),
+                           radial-gradient(1.5px 1.5px at 30px 160px,  #8a2be2 70%, transparent 72%);
+          opacity:.45; animation-duration: 90s; }
+
+@keyframes move{
+  from { background-position: 0 0; }
+  to   { background-position: -1000px 1000px; }
+}
+
+.neon-box {
+  border-radius: 20px;  
+  border: 1px solid transparent; /* borde transparente */
+  
+  /* Dos capas: fondo y borde degradado */
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(25, 25, 112, 0.5)) padding-box,
+    linear-gradient(135deg, rgba(7, 7, 83, 0.3), rgba(138, 43, 226, 0.3)) border-box;
+
+  /* Glow tenue morado oscuro */
+  box-shadow: 0 0 6px rgba(138, 43, 226, 0.4), 
+              0 0 12px rgba(138, 43, 226, 0.2);
+}
+
+/* Paleta (tus azules recordados + morado) */
+:root{
+  --azul-vibrante: rgb(0, 0, 0);   /* #1414C5 */
+  --azul-noche:    rgba(25,25,112,1);   /* #191970 */
+  --morado-neon:   rgba(138,43,226,1);  /* #8A2BE2 */
+  --glow-1: rgba(138,43,226,.7);
+  --glow-2: rgba(20,20,197,.7);
+}
+
+/* Footer fijo con blur suave */
+.neon-footer{
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(90deg, rgba(10,10,20,.35), rgba(10,10,20,.15));
+  border-top: 1px solid rgba(138,43,226,.25);
+}
+.footer-inner{
+  max-width: 980px; margin: 0 auto;
+  display: flex; gap: 18px; justify-content: center; align-items: center;
+  padding: 10px 16px;
+}
+
+/* Botones circulares para los iconos */
+.social{
+  width: 46px; height: 46px; display: inline-flex; align-items: center; justify-content: center;
+  color: var(--morado-neon);             /* define el color del trazo del SVG */
+  text-decoration: none;
+  border-radius: 50%;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+/* Anillo con borde gradiente (visible) + glow tenue */
+.neon-ring{
+  border: 3px solid transparent;
+  background:
+    linear-gradient(135deg, rgba(10,10,20,.2), rgba(10,10,30,.2)) padding-box,
+    linear-gradient(135deg, var(--azul-vibrante), var(--morado-neon)) border-box;
+  box-shadow:
+    0 0 8px rgba(138,43,226,.35),
+    0 0 16px rgba(20,20,197,.25);
+}
+
+/* SVG transparente: solo borde visible con glow */
+.social svg{
+  width: 24px; height: 24px;
+  filter:
+    drop-shadow(0 0 4px var(--glow-1))
+    drop-shadow(0 0 8px var(--glow-2));
+}
+
+/* Hover: cambia el color del trazo (stroke) y aumenta el glow */
+.social:hover{
+  color: var(--azul-vibrante);
+  transform: translateY(-1px) scale(1.05);
+}
+.social:hover svg{
+  filter:
+    drop-shadow(0 0 6px var(--glow-2))
+    drop-shadow(0 0 12px var(--glow-1));
+}
+
+/* Accesibilidad: focus visible para teclado */
+.social:focus{
+  outline: 2px solid var(--azul-vibrante);
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+
+/* Slider horizontal con tarjetas grandes */
+.projects-slider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;      /* ocupa todo el ancho: 1 tarjeta visible */
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 12px 6px;
+  scroll-behavior: smooth;      /* transición suave */
+}
+
+/* Cada tarjeta ocupa toda la vista y se alinea al centro */
+.project-card {
+  scroll-snap-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background:
+    linear-gradient(135deg, rgba(10,10,20,.45), rgba(25,25,112,.45)) padding-box,
+    linear-gradient(135deg, rgba(20,20,197,1), rgba(138,43,226,1)) border-box;
+  box-shadow: 0 0 12px rgba(138,43,226,.35), 0 0 24px rgba(20,20,197,.25);
+  transition: transform .3s ease, box-shadow .3s ease;
+  color: #eae6ff;
+}
+
+/* Contenido de cada tarjeta */
+.project-card figure {
+  margin: 0;
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.project-card img {
+  width: auto;
+  height: 400px;                /* antes 260px → ahora más grande */
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: auto;
+  display: block;
+  filter: saturate(1.05);
+}
+
+/* Hover/focus: efecto más notorio */
+.project-card:hover,
+.project-card:focus {
+  transform: translateY(-20px);     
+  box-shadow: 0 0 18px rgba(138,43,226,.6), 0 0 32px rgba(20,20,197,.5);
+  outline: none;
+}
+
+/* Caption */
+.project-card figcaption {
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: .3px;
+  font-size: 1.1rem;
+}
+
+/* Scrollbar custom */
+.projects-slider::-webkit-scrollbar { height: 10px; }
+.projects-slider::-webkit-scrollbar-track { background: rgba(255,255,255,.05); border-radius: 10px; }
+.projects-slider::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(20,20,197,.8), rgba(138,43,226,.8));
+  border-radius: 10px;
+}
+
+/* Separación del footer fijo */
+.footer-spacer{ height: 80px; } /* ajusta según la altura de tu footer */
+
+/* Alternativa de viñeta con chevron */
+ul.chevron { list-style: none; padding-left: 1.4rem; }
+ul.chevron li{ position: relative; margin: 6px 0 10px; }
+ul.chevron li::before{
+  content:"";
+  position:absolute; left:-1.1rem; top:.55em;
+  width: 10px; height: 10px;
+  transform: rotate(45deg);
+  background:
+    linear-gradient(135deg, rgba(20,20,197,1), rgba(138,43,226,1));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  padding: 2px; /* deja el centro hueco */
+  box-shadow: 0 0 10px rgba(138,43,226,.6);
+}
+
+h2{
+  margin-top: 34px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(138,43,226,.25);
+}
+
+/* HR neón para cuando lo uses */
+hr{
+  border: none; height: 2px;
+  background: linear-gradient(90deg, rgba(20,20,197,.9), rgba(138,43,226,.9));
+  box-shadow: 0 0 8px rgba(138,43,226,.6);
+  margin: 22px 0;
+}
+
+a:not(.btn){
+  color: #cfa4ff; text-decoration: none; border-bottom: 1px dotted rgba(186,85,211,.4);
+}
+a:not(.btn):hover{
+  color: #9c51ff;
+  text-shadow: 0 0 6px rgba(89, 0, 255, 0.75);
+  border-bottom-color: rgba(68, 0, 255, 0.6);
+}
+
+/* Focus visible para teclado */
+a:focus{
+  outline: 2px solid #8849fc; outline-offset: 3px; border-radius: 6px;
+}
+
+/* Badges neon para skills en <li> */
+.skills-badges li{
+  display: inline-block;
+  margin: 6px 8px 6px 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: .95rem;
+  color:#eae6ff;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(135deg, rgba(10,10,20,.35), rgba(58, 25, 112, 0.35)) padding-box,
+    linear-gradient(135deg, var(--azul-vibrante), var(--morado-neon)) border-box;
+  box-shadow: 0 0 8px rgba(138,43,226,.25);
+}
+.skills-badges li:hover{
+  box-shadow: 0 0 12px rgba(138,43,226,.45), 0 0 20px rgba(20,20,197,.35);
+}
+
+/* Evita que el carrusel cause scroll vertical del documento */
+.projects-slider{
+  overflow-y: hidden;            /* clave */
+  overscroll-behavior: contain;  /* no “hereda” el scroll al body */
+}
+
+/* (Opcional) Desactiva el auto-smooth global del html si lo tuvieras */
+html{ scroll-behavior: auto; }

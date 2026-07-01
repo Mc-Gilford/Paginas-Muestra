@@ -1,197 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Tu archivo de estilos -->
-  <link rel="stylesheet" href="css/main.css">
+    <!-- Basic -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Jose Rodriguez - CV</title>
+    <!-- Title -->
+    <title>McGilford Studio | Creative Media & Digital Solutions</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Creative and digital studio focused on photography, video, web development, apps and custom systems for brands, businesses and creators.">
+
+    <meta name="keywords"
+        content="Photography, Video Editing, Web Development, Apps, Custom Systems, Content Creation, Branding, Marketing">
+
+    <meta name="author" content="Jose Rodriguez">
+
+    <!-- Open Graph (Social Media Preview) -->
+    <meta property="og:title" content="McGilford Studio">
+    
+    <meta property="og:description"
+        content="Creative media, websites, apps and digital solutions for brands and creators.">
+
+    <meta property="og:type" content="website">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/slide.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/language.js"></script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Audiowide&family=Black+Ops+One&family=Eagle+Lake&family=Kavoon&family=Rubik+Dirt&family=Zen+Dots&display=swap" rel="stylesheet">
 </head>
 
-<div class="stars stars-1"></div>
-<div class="stars stars-2"></div>
-<div class="stars stars-3"></div>
+<body>
 
-  <!-- Header -->
-  <section class="container py-5">
-    <div class="row align-items-center">
-      <div class="col-md-4 text-center">
-        <img src="img/mi-foto.jpeg" alt="Jose de Jesus Rodriguez" class="profile">
-      </div>
-      <div class="col-md-8">
-        <h1 class="display-5 fw-bold">Hi, I'm Jose</h1>
-        <p class="lead">
-          Software Engineer with 7+ years of experience in backend development, 
-          microservices, and Oracle CPQ. Skilled in Java, Spring Boot, APIs, and database design.
-        </p>
-        <a href="CV-English.pdf" class="btn btn-primary btn-lg me-2">Download CV</a>
-        <a href="https://wa.me/5215563672319?text=Hola%20Jose,%20vi%20tu%20CV%20web%20y%20quiero%20contactarte" class="btn btn-outline-secondary btn-lg" target="_blank" rel="noopener">
-  Contact Me
-</a>
-      </div>
-    </div>
-  </section>
+    <nav class="navigation-bar-text">
 
-  <!-- Professional Summary -->
-  <section class="container py-4 neon-box">
-    <h2>Professional Summary</h2>
-    <p>I am a Software Engineer with more than seven years of experience in backend development, microservices, and enterprise platforms such as Oracle CPQ. Throughout my career, I have built a strong track record of designing scalable systems, developing APIs, and delivering solutions that support critical business operations. </p> 
-    <p> In my previous roles at Oracle, Banco Azteca, and BBVA, I worked extensively with Java, Spring Boot, BML, and OJET. My work involved creating REST APIs, integrating microservices, and optimizing databases with MySQL and MongoDB. These experiences allowed me to collaborate across teams, adapt quickly to new technologies, and lead projects that impacted thousands of users. </p> 
-    <p> What motivates me is the opportunity to apply my skills in environments that value innovation, continuous learning, and global impact. I am eager to contribute to challenging projects, learn from world-class engineers, and create solutions that improve both developer productivity and customer experience. </p>
-  </section>
+        <div class="logo">
+            <img src="img/logo.png">
+        </div>
 
-  <!-- Education -->
-  <section class="container py-4">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>CECYT No.8 Narciso Bassols</strong> – High School Diploma (2015)</li>
-      <li><strong>ESCOM</strong> – Systems Engineering (2016–2022)</li>
-    </ul>
-  </section>
+        <div class="nav-text">
+            <a href="#projects">
+                <p>Projects</p>
+            </a>
+        </div>
 
-  <!-- Courses -->
-  <section class="container py-4 neon-box">
-    <h2>Courses</h2>
-    <ul>
-      <li>BEDU – Data Science (MongoDB, MySQL, R, Python)</li>
-      <li>INOVACCION – Microsoft Azure Services & IA</li>
-      <li>ANGLO – English Language</li>
-      <li>CELEX – English Language</li>
-      <li>IBM – Microservices</li>
-    </ul>
-  </section>
+        <div class="nav-text">
+            <a href="#about-me">
+                <p>About me</p>
+            </a>
+        </div>
 
-  <!-- Certifications -->
-  <section class="container py-4 skills-badges">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Scrum Developer Professional (CertiProf)</li>
-      <li>CCNA Network Fundamentals</li>
-      <li>CCNA Introduction to Cybersecurity</li>
-      <li>Microsoft Azure Fundamentals (AZ-900)</li>
-    </ul>
-  </section>
+        <div class="nav-text">
+            <a href="#videogames">
+                <p>Videogames</p>
+            </a>
+        </div>
+        <button id="language-toggle" class="language-toggle">
+            ES
+        </button>
+    </nav>
 
-  <!-- Languages -->
-  <section class="container py-4 neon-box">
-    <h2>Languages</h2>
-    <ul>
-      <li>English (Advanced)</li>
-      <li>German (Intermediate)</li>
-    </ul>
-  </section>
+<header>
 
-  <!-- Technical Skills -->
-  <section class="container py-4 skills-badges">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Programming:</strong> C, C#, Java, Python, SQL, R, Swift, BML, VHDL, PHP, Android</li>
-      <li><strong>Web:</strong> HTML5, CSS3, JavaScript, JQuery, AJAX, Bootstrap</li>
-      <li><strong>Frameworks:</strong> Spring Boot, Quarkus, Knockout, OJET</li>
-      <li><strong>Databases:</strong> MySQL, MongoDB, MariaDB</li>
-      <li><strong>APIs & Integration:</strong> REST APIs, RAML, JSON, XML, microservices</li>
-    </ul>
-  </section>
+        <section id="projects">
 
-  <!-- Tools -->
-  <section class="container py-4 neon-box">
-    <h2>Tools</h2>
-    <ul>
-      <li>Git, GitHub, GitLab, Jenkins, Bitbucket</li>
-      <li>Kibana, SonarLint</li>
-      <li>Swagger, Postman</li>
-      <li>Firebase, Sandbox</li>
-    </ul>
-  </section>
+            <div id="home-slide" class="project-slide active">
+                <h1>MCGilford Studio</h1>
 
-  <!-- Systems -->
-  <section class="container py-4">
-    <h2>Systems</h2>
-    <p>Windows, Linux, iOS</p>
-  </section>
+                <p class="en">
+                    We create visual content, websites, apps and custom digital systems
+                    to help brands and businesses communicate, sell and operate better.
+                </p>
 
-  <!-- Experience -->
-  <section class="container py-4 neon-box">
-    <h2>Experience</h2>
-    <ul>
-      <li><strong>V-Systems – Web Master & Maintenance (2015)</strong></li>
-      <li><strong>Laboratories Olarte y Akle – Project</strong> (Management system & Android app)</li>
-      <li><strong>IDS Comercial (BBVA Project) – Backend Developer (2021)</strong></li>
-      <li><strong>Banco Azteca – Backend Developer (2021–2022)</strong></li>
-      <li><strong>Oracle – Application Developer 2 (2022–Present)</strong></li>
-    </ul>
-  </section>
+                <p class="es">
+                    Creamos contenido visual, páginas web, apps y sistemas digitales
+                    para ayudar a marcas y negocios a comunicar, vender y crecer mejor.
+                </p>
+                <a href="#projects" class="btn2 btn-home en">
+                    <span class="spn2">View Project</span>
+                </a>
 
-<!-- Personal Projects -->
-<section class="container py-4" id="projects">
-  <h2>Personal Projects</h2>
+                <a href="#projects" class="btn2 btn-home es">
+                    <span class="spn2">Ver proyecto</span>
+                </a>
+            </div>
 
-  <div class="projects-slider" aria-label="Project gallery">
-    <a class="project-card" href="https://github.com/McGilfordJose/AprendeAProgramar" target="_blank" rel="noopener">
-      <figure>
-        <img src="img/pag (1).png" alt="Aprende a Programar">
-        <figcaption>Aprende a Programar (GitHub)</figcaption>
-      </figure>
-    </a>
+            <div id="businesses-slide" class="project-slide">
+                <h1 class="en">Business</h1>
 
-    <a class="project-card" href="Muestras/AbbaConsu/">
-      <figure>
-        <img src="img/pag (2).png" alt="AbbaConsu">
-        <figcaption>AbbaConsu</figcaption>
-      </figure>
-    </a>
+                <p class="en">
+                    Promote your business with professional photography, videos,
+                    websites, apps and digital experiences designed to improve
+                    your online presence and connect with more customers.
+                </p>
 
-    <a class="project-card" href="Muestras/AbbaConsul/">
-      <figure>
-        <img src="img/pag (3).png" alt="AbbaConsul">
-        <figcaption>AbbaConsul</figcaption>
-      </figure>
-    </a>
+                <h1 class="es">Negocios</h1>
 
-    <a class="project-card" href="Muestras/GmArmonia/">
-      <figure>
-        <img src="img/pag (4).png" alt="GmArmonia">
-        <figcaption>GmArmonia</figcaption>
-      </figure>
-    </a>
+                <p class="es">
+                    Promociona tu negocio con fotografía profesional, videos,
+                    páginas web, apps y experiencias digitales diseñadas para mejorar
+                    tu presencia en línea y conectar con más clientes.
+                </p>
+                <a href="#projects" class="btn2 btn-business en">
+                    <span class="spn2">View Project</span>
+                </a>
 
-    <a class="project-card" href="https://github.com/Mc-Gilford/TT/tree/main?tab=readme-ov-file">
-      <figure>
-        <img src="img/pag (5).jpeg" alt="Domu">
-        <figcaption>Domu Aplicacion de Servicios</figcaption>
-      </figure>
-    </a>
-  </div>
-</section>
+                <a href="#projects" class="btn2 btn-business es">
+                    <span class="spn2">Ver proyecto</span>
+                </a>
+            </div>
 
-<!-- Separación con el footer para que no se superponga -->
-<div class="footer-spacer"></div>
+            <div id="personal-slide" class="project-slide">
+                <h1>Personal</h1>
 
+                <p class="en">
+                    Capture meaningful moments with creative photography,
+                    cinematic videos and visual experiences for special people,
+                    memories and important moments.
+                </p>
 
-<footer class="neon-footer" role="contentinfo">
-  <div class="footer-inner">
-    <a class="social neon-ring" href="https://www.linkedin.com/in/jose-de-jesus-rodriguez-aparicio-927ab51b8/" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <!-- Ícono LinkedIn (fill transparente, solo borde) -->
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM14.5 9c-2.21 0-4 1.79-4 4v8h4v-6.2c0-1.1.9-2 2-2s2 .9 2 2V21h4v-8c0-3.31-2.69-6-6-6z"
-              fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+                <p class="es">
+                    Captura momentos importantes con fotografía creativa,
+                    videos cinematográficos y experiencias visuales para personas especiales,
+                    recuerdos y momentos únicos.
+                </p>          
 
-    <a class="social neon-ring" href="https://github.com/Mc-Gilford" target="_blank" rel="noopener" aria-label="GitHub">
-      <!-- Ícono GitHub (fill transparente, solo borde) -->
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 2c-5.52 0-10 4.48-10 10 0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.49v-1.72c-2.78.61-3.37-1.19-3.37-1.19-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.54 2.36 1.09 2.94.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .85-.27 2.78 1.02A9.7 9.7 0 0 1 12 7.07c.86 0 1.73.12 2.54.36 1.93-1.29 2.78-1.02 2.78-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.83-2.35 4.67-4.58 4.92.36.31.69.92.69 1.86v2.75c0 .27.18.58.69.49A9.996 9.996 0 0 0 22 12c0-5.52-4.48-10-10-10Z"
-              fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
-  </div>
-</footer>
-<script src="js/main.js"></script>
+                <a href="#projects" class="btn2 btn-personal en">
+                    <span class="spn2">View Project</span>
+                </a>
+
+                <a href="#projects" class="btn2 btn-personal es">
+                    <span class="spn2">Ver proyecto</span>
+                </a>
+            </div>
+
+            <div id="wrestling-slide" class="project-slide">
+                <h1 class="en">Wrestlers</h1>
+
+                <p class="en">
+                    Create wrestling content with dynamic photography,
+                    videos, character branding, merchandise concepts and social media content
+                    for wrestlers, events and wrestling brands.
+                </p>
+
+                <h1 class="es">Luchadores</h1>
+
+                <p class="es">
+                    Crea contenido de lucha libre con fotografía dinámica,
+                    videos, branding de personaje, conceptos de mercancía y contenido para redes sociales
+                    para luchadores, eventos y marcas de lucha libre.
+                </p>
+                <a href="#projects" class="btn2 btn-wrestling en">
+                    <span class="spn2">View Project</span>
+                </a>
+
+                <a href="#projects" class="btn2 btn-wrestling es">
+                    <span class="spn2">Ver proyecto</span>
+                </a>
+            </div>
+
+            <div class="slide-thumbs">
+                <button class="active" data-target="home-slide">
+                    <img src="img/home.jpg" alt="McGilford Studio">
+                </button>
+
+                <button data-target="businesses-slide">
+                    <img src="img/bussiness.jpg" alt="Business">
+                </button>
+
+                <button data-target="personal-slide">
+                    <img src="img/personal.png" alt="Personal">
+                </button>
+
+                <button data-target="wrestling-slide">
+                    <img src="img/wrestling.png" alt="Wrestling">
+                </button>
+            </div>
+
+        </section>
+
+    </header>
+    <section class="services-section" id="project-categories">
+
+        <div class="services-intro">
+
+            <span class="section-label en">SERVICES</span>
+            <span class="section-label es">SERVICIOS</span>
+
+            <h1 class="en">
+                Explore what <span>McGilford Studio</span> can create for you.
+            </h1>
+
+            <h1 class="es">
+                Explora lo que <span>McGilford Studio</span> puede crear para ti.
+            </h1>
+
+            <p class="en">
+                Photography • Video • Websites • Apps • Branding • Interactive Experiences
+            </p>
+
+            <p class="es">
+                Fotografía • Video • Sitios Web • Apps • Branding • Experiencias Interactivas
+            </p>
+
+        </div>
+
+        <div class="services-grid">
+
+            <!-- Websites -->
+            <button class="service-tile" data-service="websites">
+
+                <img src="img/home.jpg" alt="Websites">
+
+                <div class="service-overlay">
+
+                    <span class="service-number">01</span>
+
+                    <h2 class="en">WEB</h2>
+                    <h2 class="es">WEB</h2>
+
+                </div>
+
+            </button>
+
+            <!-- Photography -->
+            <button class="service-tile" data-service="photography">
+
+                <img src="img/logo.png" alt="Photography">
+
+                <div class="service-overlay">
+
+                    <span class="service-number">02</span>
+
+                    <h2 class="en">PHOTO</h2>
+                    <h2 class="es">FOTO</h2>
+
+                </div>
+
+            </button>
+
+            <!-- Video -->
+            <button class="service-tile" data-service="video-editing">
+
+                <img src="img/personal.png" alt="Video Editing">
+
+                <div class="service-overlay">
+
+                    <span class="service-number">03</span>
+
+                    <h2 class="en">VIDEO</h2>
+                    <h2 class="es">VIDEO</h2>
+
+                </div>
+
+            </button>
+
+            <!-- Apps -->
+            <button class="service-tile" data-service="apps-systems">
+
+                <img src="img/apps-systems.jpg" alt="Apps & Systems">
+
+                <div class="service-overlay">
+
+                    <span class="service-number">04</span>
+
+                    <h2 class="en">APPS</h2>
+                    <h2 class="es">APPS</h2>
+
+                </div>
+
+            </button>
+
+            <!-- Marketing -->
+            <button class="service-tile" data-service="digital-marketing">
+
+                <img src="img/mkt.png" alt="Marketing">
+
+                <div class="service-overlay">
+
+                    <span class="service-number">05</span>
+
+                    <h2 class="en">MKT</h2>
+                    <h2 class="es">MKT</h2>
+
+                </div>
+
+            </button>
+
+            <!-- Videogames -->
+            <button class="service-tile" data-service="videogames">
+
+                <img src="img/game.png" alt="Videogames">
+
+                <div class="service-overlay">
+
+                    <span class="service-number">06</span>
+
+                    <h2 class="en">GAME</h2>
+                    <h2 class="es">JUEGOS</h2>
+
+                </div>
+
+            </button>
+
+        </div>
+
+        <!-- =========================
+            EXPANDED PANEL
+        ========================== -->
+
+        <div class="service-expanded" id="service-expanded">
+
+            <button class="close-service" id="close-service">
+                ✕
+            </button>
+
+            <div class="service-gallery">
+
+                <button class="gallery-arrow prev">
+                    &#10094;
+                </button>
+
+                <div class="gallery-slider">
+
+                    <div class="gallery-track">
+
+                        <img src="img/bussiness.jpg" alt="">
+                        <img src="img/mkt.png" alt="">
+                        <img src="img/logo.png" alt="">
+
+                    </div>
+
+                </div>
+
+                <button class="gallery-arrow next">
+                    &#10095;
+                </button>
+
+                <div class="gallery-dots">
+
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+            <div class="service-info">
+
+                <h2 class="en">
+                    Websites
+                </h2>
+
+                <h2 class="es">
+                    Páginas Web
+                </h2>
+
+                <div class="description en"></div>
+
+                <div class="description es"></div>
+
+                <a href="#about-me" class="btn2 btn-business">
+
+                    <span class="spn2">
+                        Contact
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section id="about-me" class="about-section dark-section-magenta">
+
+        <div class="section-container about-container">
+
+           <div class="about-visual">
+
+                <div class="about-scene">
+
+                    <img src="img/profile-background.png"
+                        class="about-bg"
+                        alt="">
+
+                    <div class="about-glow"></div>
+
+                    <img src="img/profile.jpg"
+                        id="profile-photo"
+                        alt="Jose Rodriguez">
+
+                </div>
+
+            </div>
+
+            <div class="about-content">
+
+                <span class="section-label neon-magenta en">
+                    ABOUT ME
+                </span>
+
+                <span class="section-label neon-magenta es">
+                    SOBRE MÍ
+                </span>
+
+                <h2 class="section-title en magenta-title">
+                    Creative Developer &
+                    <span class="magenta-text">Multimedia Creator</span>
+                </h2>
+
+                <h2 class="section-title es magenta-title">
+                    Desarrollador Creativo &
+                    <span class="magenta-text">Creador Multimedia</span>
+                </h2>
+
+                <p class="section-text en">
+
+                My name is Jose Rodriguez, a Software Engineer and multimedia creator passionate
+                about technology, design and visual storytelling.
+
+                I created McGilford Studio because I believe every person, business and project
+                has a unique story worth sharing through beautiful digital experiences.
+
+                </p>
+
+                <p class="section-text en">
+
+                Over the years I have developed enterprise software for companies such as
+                Oracle, Banco Azteca and BBVA using technologies including Java, JavaScript,
+                C#, HTML, CSS and Oracle JET.
+
+                Today I combine that technical experience with photography, video production,
+                web development and digital design to help people build a stronger online
+                presence, communicate their ideas and connect with more customers.
+
+                My goal is not only to develop software, but to create experiences that inspire,
+                grow businesses and help others bring their vision to life.
+
+                </p>
+
+                <p class="section-text es">
+
+                Mi nombre es José Rodríguez, Ingeniero de Software y creador multimedia
+                apasionado por la tecnología, el diseño y la narrativa visual.
+
+                Creé McGilford Studio porque creo que cada persona, negocio y proyecto tiene
+                una historia única que merece ser compartida a través de experiencias digitales
+                modernas y atractivas.
+
+                </p>
+
+                <p class="section-text es">
+
+                Durante mi carrera he desarrollado software empresarial para compañías como
+                Oracle, Banco Azteca y proyectos de BBVA utilizando tecnologías como Java,
+                JavaScript, C#, HTML, CSS y Oracle JET.
+
+                Hoy combino esa experiencia técnica con fotografía, producción de video,
+                desarrollo web y diseño digital para ayudar a personas y empresas a fortalecer
+                su presencia en internet, comunicar mejor sus ideas y conectar con más clientes.
+
+                Mi objetivo no es solo desarrollar software, sino crear experiencias que
+                transmitan confianza, impulsen el crecimiento de los proyectos y permitan que
+                cada idea llegue a más personas.
+
+                </p>
+
+                <div class="about-actions">
+
+                    <a href="resume.pdf"
+                    class="btn-magenta download-button-en">
+
+                        Download Resume
+
+                    </a>
+
+                    <a href="resume.pdf"
+                    class="btn-magenta download-button-es">
+
+                        Descargar CV
+
+                    </a>
+
+                </div>
+
+                <div class="linkedin-card">
+
+                    <span class="linkedin-label">
+
+                        LinkedIn Profile
+
+                    </span>
+
+                    <div
+                        class="badge-base LI-profile-badge"
+                        data-locale="es_ES"
+                        data-size="large"
+                        data-theme="dark"
+                        data-type="HORIZONTAL"
+                        data-vanity="jose-de-jesus-rodriguez-aparicio-software-engineer"
+                        data-version="v1">
+
+                    </div>
+
+                </div>
+
+                <div class="contact-icons">
+
+                    <a href="https://wa.me/525563672319" target="_blank" class="neon-magenta">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </a>
+
+                    <a href="mailto:chucho970407@gmail.com" class="neon-magenta">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </a>
+
+                    <a href="https://github.com/Mc-Gilford" target="_blank" class="neon-magenta">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/jose-de-jesus-rodriguez-aparicio-927ab51b8/" target="_blank" class="neon-magenta">
+
+                        <i class="fa-brands fa-linkedin"></i>
+
+                    </a>
+
+                    <a href="https://www.instagram.com/mcgilford_studio/" target="_blank" class="neon-magenta">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+                    <a href="https://www.tiktok.com/@mcgilfordz" target="_blank" class="neon-magenta">
+
+                        <i class="fa-brands fa-tiktok"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 </body>
 </html>
