@@ -743,19 +743,15 @@ section
     object-fit: cover;
 }
 
-
 /* =====================================================
-   HERO RESPONSIVE SYSTEM - CLEAN
-   Only main.css controls #projects / .project-slide
+   HERO RESPONSIVE SYSTEM
 ===================================================== */
 
-/* Laptop / medium screens */
 @media (max-width: 1400px)
 {
     #projects
     {
-        min-height: 620px;
-        max-height: 900px;
+        min-height: 660px;
     }
 
     .project-slide h1
@@ -770,14 +766,13 @@ section
     }
 }
 
-/* Tablet */
 @media (max-width: 1024px)
 {
     #projects
     {
-        height: 72svh;
-        min-height: 560px;
-        max-height: 720px;
+        height: 78vh;
+        min-height: 580px;
+        max-height: 760px;
     }
 
     #businesses-slide,
@@ -813,7 +808,6 @@ section
     }
 }
 
-/* Phones: compact hero, content visible, thumbs inside bottom */
 @media (max-width: 768px)
 {
     .navigation-bar-text
@@ -835,49 +829,28 @@ section
 
     #projects
     {
-        height: auto;
-        min-height: 0;
+        height: clamp(500px, 72svh, 640px);
+        min-height: unset;
         max-height: none;
-        overflow: hidden;
     }
 
     .project-slide
     {
-        position: absolute !important;
-        inset: 0;
-
-        width: 100%;
-        min-height: 0;
-        height: 100%;
-
         display: flex !important;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        padding:
-            52px
-            22px
-            84px;
+        gap: 16px;
 
-        gap: 12px;
+        padding:
+            64px
+            24px
+            92px;
 
         text-align: center;
-
         background-attachment: scroll !important;
         background-size: cover;
-        background-position: center center;
-    }
-
-    .project-slide.active
-    {
-        position: relative !important;
-        height: clamp(390px, 112vw, 520px);
-    }
-
-    .project-slide:not(.active)
-    {
-        position: absolute !important;
     }
 
     #home-slide,
@@ -885,188 +858,233 @@ section
     #personal-slide,
     #wrestling-slide
     {
-        display: flex !important;
-        grid-template-columns: none;
+        background-position: center top;
     }
 
+    .project-slide h1,
     #home-slide h1,
     #businesses-slide h1,
     #personal-slide h1,
     #wrestling-slide h1
     {
-        width: 100%;
-        max-width: 95%;
-
-        grid-column: auto;
-        justify-self: center;
-        align-self: center;
-
-        margin: 0;
-
-        font-size: clamp(34px, 9.5vw, 54px);
+        font-size: clamp(38px, 10vw, 66px);
         line-height: 1;
         text-align: center;
+        margin: 0;
     }
 
+    .project-slide p,
     #home-slide p,
     #businesses-slide p,
     #personal-slide p,
     #wrestling-slide p
     {
-        width: 100%;
         max-width: 92%;
-
-        grid-column: auto;
-        justify-self: center;
-
-        margin: 0 auto;
-
-        font-size: clamp(13px, 3.6vw, 16px);
-        line-height: 1.42;
+        font-size: clamp(14px, 3.7vw, 18px);
+        line-height: 1.45;
         text-align: center;
+        margin: 0 auto;
     }
 
-    #home-slide .btn2,
     #businesses-slide .btn2,
     #personal-slide .btn2,
-    #wrestling-slide .btn2
+    #wrestling-slide .btn2,
+    #home-slide .btn2
     {
         align-self: center;
         justify-self: center;
-
-        margin-top: 2px;
-        padding: 9px 20px;
-
-        font-size: 12px;
-    }
-
-    .slide-thumbs
-    {
-        left: 50%;
-        right: auto;
-        bottom: 12px;
-
-        transform: translateX(-50%);
-
-        width: 92%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        gap: 8px;
-        flex-wrap: nowrap;
-    }
-
-    .slide-thumbs button
-    {
-        width: clamp(54px, 17vw, 76px);
-        height: clamp(34px, 10vw, 46px);
-
-        border-radius: 10px;
-    }
-
-    .slide-thumbs button.active,
-    .slide-thumbs button:hover
-    {
-        transform: scale(1.05);
-    }
-}
-
-/* Small phones */
-@media (max-width: 430px)
-{
-    .project-slide.active
-    {
-        height: clamp(360px, 108vw, 470px);
-    }
-
-    .project-slide
-    {
-        padding:
-            46px
-            18px
-            78px;
-
-        gap: 10px;
-    }
-
-    #home-slide h1,
-    #businesses-slide h1,
-    #personal-slide h1,
-    #wrestling-slide h1
-    {
-        font-size: clamp(30px, 9vw, 46px);
-    }
-
-    #home-slide p,
-    #businesses-slide p,
-    #personal-slide p,
-    #wrestling-slide p
-    {
-        font-size: clamp(12px, 3.45vw, 14px);
-        line-height: 1.35;
-        max-width: 94%;
+        margin-top: 6px;
     }
 
     .btn2
     {
-        padding: 8px 18px;
-        font-size: 11px;
+        padding: 11px 24px;
+        font-size: 13px;
     }
 
     .slide-thumbs
     {
-        bottom: 10px;
-        gap: 6px;
+        width: 96%;
+        bottom: 14px;
+
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 7px;
     }
 
     .slide-thumbs button
     {
-        width: clamp(48px, 16vw, 64px);
-        height: clamp(30px, 9.5vw, 40px);
+        width: clamp(54px, 18vw, 74px);
+        height: clamp(36px, 11vw, 48px);
+        border-radius: 10px;
     }
 }
 
-/* Very small phones */
-@media (max-width: 360px)
+@media (max-width: 480px)
 {
-    .project-slide.active
+    #projects
     {
-        height: 360px;
+        height: clamp(470px, 68svh, 590px);
     }
 
     .project-slide
     {
         padding:
-            42px
-            14px
-            72px;
+            58px
+            18px
+            82px;
 
-        gap: 8px;
+        gap: 14px;
     }
 
+    .project-slide h1,
     #home-slide h1,
     #businesses-slide h1,
     #personal-slide h1,
     #wrestling-slide h1
     {
-        font-size: 29px;
+        font-size: clamp(34px, 10.5vw, 54px);
     }
 
+    .project-slide p,
     #home-slide p,
     #businesses-slide p,
     #personal-slide p,
     #wrestling-slide p
     {
+        font-size: clamp(13px, 3.7vw, 16px);
+        line-height: 1.42;
+    }
+
+    .btn2
+    {
+        padding: 10px 20px;
         font-size: 12px;
-        line-height: 1.3;
     }
 
     .slide-thumbs button
     {
-        width: 44px;
-        height: 29px;
+        width: 52px;
+        height: 35px;
     }
 }
 
+@media (max-width: 380px)
+{
+    #projects
+    {
+        height: 455px;
+    }
+
+    .project-slide
+    {
+        padding-bottom: 76px;
+    }
+
+    .slide-thumbs button
+    {
+        width: 46px;
+        height: 32px;
+    }
+}
+/* =====================================================
+   HERO MOBILE COMPACT FIX
+===================================================== */
+
+@media (max-width: 768px)
+{
+    #projects
+    {
+        height: 100px;
+        min-height: 0;
+        max-height: none;
+    }
+
+    .project-slide
+    {
+        position: relative !important;
+
+        min-height: clamp(520px, 120vw, 680px);
+        height: 100px;
+
+        padding:
+            80px
+            24px
+            110px;
+
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 18px;
+
+        text-align: center;
+    }
+
+    .project-slide:not(.active)
+    {
+        position: absolute !important;
+    }
+
+    .project-slide h1
+    {
+        font-size: clamp(40px, 11vw, 64px);
+    }
+
+    .project-slide p
+    {
+        max-width: 92%;
+        font-size: clamp(14px, 3.8vw, 18px);
+        line-height: 1.45;
+    }
+
+    .btn2
+    {
+        margin-top: 4px;
+        padding: 11px 24px;
+        font-size: 13px;
+    }
+
+    .slide-thumbs
+    {
+        bottom: 18px;
+    }
+}
+
+@media (max-width: 430px)
+{
+    .project-slide
+    {
+        min-height: clamp(500px, 118vw, 620px);
+
+        padding:
+            72px
+            20px
+            96px;
+
+        gap: 14px;
+    }
+
+    .project-slide h1
+    {
+        font-size: clamp(36px, 10vw, 54px);
+    }
+
+    .project-slide p
+    {
+        font-size: 14px;
+    }
+
+    .btn2
+    {
+        padding: 10px 22px;
+        font-size: 12px;
+    }
+
+    .slide-thumbs button
+    {
+        width: 56px;
+        height: 38px;
+    }
+}
