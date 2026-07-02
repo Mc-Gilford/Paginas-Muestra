@@ -1,116 +1,153 @@
+/* =====================================================
+   MAIN.CSS
+   Navbar + Hero / Project Slides + Hero Buttons
+   This file owns the main slideshow responsive behavior.
+===================================================== */
+
+html
+{
+    scroll-behavior: smooth;
+}
+
 body
 {
     margin: 0;
+    background: #050505;
+    color: white;
+    overflow-x: hidden;
 }
+
+/* =========================
+   NAVBAR
+========================= */
 
 .navigation-bar-text
 {
-    background: linear-gradient(
-        90deg,
-        #050505 0%,
-        #0b0b0f 35%,
-        #0d0714 50%
-    );
-    /*border-bottom: 1px solid rgba(138, 43, 226, 0.35);*/
-    box-shadow:
-        0px 4px 18px rgba(0, 0, 0, 0.75),
-        0px 0px 12px rgba(138, 43, 226, 0.12);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     width: 100%;
     height: 80px;
-    color: white;
+
     display: flex;
     align-items: center;
+
     padding: 0;
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #050505 0%,
+            #0b0b0f 45%,
+            #0d0714 100%
+        );
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.75),
+        0 0 12px rgba(138, 43, 226, 0.12);
 }
+
 .logo
 {
-    height: 100%;
     width: 90px;
+    height: 100%;
+
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
+    flex: 0 0 90px;
 }
 
 .logo img
 {
     height: 100%;
     width: auto;
-    display: block;
-    margin: auto;
 
-    transition: all 0.3s ease;
-    filter: drop-shadow(0px 0px 5px rgba(138, 43, 226, 0.4));
+    display: block;
+
+    transition: 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(138, 43, 226, 0.4));
 }
 
 .logo img:hover
 {
     transform: scale(1.05);
+
     filter:
-        drop-shadow(0px 0px 5px rgba(138, 43, 226, 0.6))
-        drop-shadow(0px 0px 15px rgba(138, 43, 226, 0.4));
+        drop-shadow(0 0 5px rgba(138, 43, 226, 0.6))
+        drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));
 }
 
 .navigation-bar-text .nav-text
 {
     flex: 1;
     height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+
     margin: 0;
+    transition: 0.3s ease;
 }
 
 .navigation-bar-text .nav-text:hover
 {
-    background: linear-gradient(
-        90deg,
-        #080808 0%,
-        #101018 55%,
-        #12091f 100%
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #080808 0%,
+            #101018 55%,
+            #12091f 100%
+        );
 }
 
 .nav-text a
 {
-    color: white;
-    text-decoration: none;
+    position: relative;
+
     width: 100%;
     height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+
     overflow: hidden;
-    letter-spacing: 1px;
+
+    color: white;
+    text-decoration: none;
     text-transform: uppercase;
-    font-size: 20px;
-    transition: all 0.3s ease;
+
     font-family: "Black Ops One", system-ui;
+    font-size: clamp(13px, 1.1vw, 20px);
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
 }
 
 .nav-text a:hover
 {
     color: #c88cff;
-    font-size: 24px;
 }
 
 .nav-text a::before
 {
     content: "";
-    position: absolute;
 
+    position: absolute;
     bottom: 10px;
 
     width: 0;
     height: 2px;
 
-    background-color: #8a2be2;
+    background: #8a2be2;
+    box-shadow: 0 0 8px #8a2be2;
 
-    box-shadow: 0px 0px 8px #8a2be2;
-
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .nav-text a:hover::before
@@ -121,44 +158,66 @@ body
 .nav-text a::after
 {
     content: "";
-    position: absolute;
 
+    position: absolute;
     left: -100%;
     top: 0;
 
     width: 100%;
     height: 100%;
 
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(138, 43, 226, 0.15),
-        transparent
-    );
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(138, 43, 226, 0.15),
+            transparent
+        );
 
     transition: 0.5s ease;
 }
+
+.nav-text a:hover::after
+{
+    left: 100%;
+}
+
+/* =========================
+   BASE SECTION
+========================= */
+
 section
 {
     width: 100%;
-    min-height: 100vh;
     margin: 0;
 }
 
-#projects h1{
-    font-family: "Audiowide", sans-serif;
-}
-#projects p,a{
-    font-family: "Anta", sans-serif;
-}
+/* =========================
+   HERO / PROJECT SLIDES
+========================= */
 
 #projects
 {
     position: relative;
+
     width: 100%;
-    height: clamp(700px, 85vh, 950px);
+    height: 100vh;
+    min-height: 720px;
+    max-height: 1050px;
+
     overflow: hidden;
     background: #000;
+}
+
+#projects h1
+{
+    font-family: "Audiowide", sans-serif;
+}
+
+#projects p,
+#projects a
+{
+    font-family: "Anta", sans-serif;
 }
 
 .project-slide
@@ -170,19 +229,18 @@ section
     height: 100%;
 
     opacity: 0;
-    transform: none;
     pointer-events: none;
 
-    transition:
-        opacity 0.8s ease;
+    overflow: hidden;
+    box-sizing: border-box;
 
+    transition: opacity 0.8s ease;
     z-index: 0;
 }
 
 .project-slide.active
 {
     opacity: 1;
-    transform: none;
     pointer-events: auto;
     z-index: 5;
 }
@@ -191,8 +249,11 @@ section
 .project-slide p,
 .project-slide a
 {
+    position: relative;
+    z-index: 2;
+
     opacity: 0;
-    transform: translateY(65px);
+    transform: translateY(55px);
 
     transition:
         opacity 0.7s ease 0.25s,
@@ -207,16 +268,29 @@ section
     transform: translateY(0);
 }
 
-h1
+.project-slide h1
 {
     margin: 0;
+    line-height: 0.95;
+    font-size: clamp(70px, 6vw, 180px);
 }
 
-/* HOME */
+.project-slide p
+{
+    margin: 0;
+    line-height: 1.6;
+    font-size: clamp(20px, 1.4vw, 34px);
+    max-width: min(850px, 45vw);
+
+    text-shadow: 0 0 10px rgba(0,0,0,0.95);
+}
+
+/* =========================
+   HOME SLIDE
+========================= */
+
 #home-slide
 {
-    position: relative;
-
     background-image: url("../img/home.jpg");
     background-color: rgba(0, 0, 0, 0.6);
     background-repeat: no-repeat;
@@ -224,15 +298,14 @@ h1
     background-position: center center;
     background-attachment: fixed;
 
-    color: white;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    padding-inline: clamp(32px, 7vw, 150px);
     text-align: center;
-    overflow: hidden;
+    color: white;
 }
 
 #home-slide::before
@@ -241,49 +314,40 @@ h1
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.75) 0%,
-        rgba(20, 0, 35, 0.55) 35%,
-        rgba(0, 0, 0, 0.65) 100%
-    );
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(20, 0, 35, 0.55) 35%,
+            rgba(0, 0, 0, 0.65) 100%
+        );
 
     z-index: 1;
 }
 
-#home-slide h1,
-#home-slide p
-{
-    position: relative;
-    z-index: 2;
-}
-
 #home-slide h1
 {
-    font-size: clamp(48px, 6vw, 90px);
-    margin: 0 0 25px 0;
+    font-size: clamp(70px, 6.5vw, 170px);
+    margin-bottom: clamp(18px, 2vw, 35px);
 
     text-shadow:
-        0px 0px 15px rgba(138, 43, 226, 0.7),
-        0px 0px 35px rgba(138, 43, 226, 0.4);
+        0 0 15px rgba(138, 43, 226, 0.7),
+        0 0 35px rgba(138, 43, 226, 0.4);
 }
 
 #home-slide p
 {
-    max-width: 850px;
-    font-size: clamp(18px, 1.6vw, 26px);
-    line-height: 1.3;
-    margin: 12px 20px;
-
-    text-shadow:
-        0px 0px 10px rgba(0, 0, 0, 0.9);
+    max-width: min(1100px, 70vw);
+    font-size: clamp(20px, 1.45vw, 34px);
+    margin: 10px 0;
 }
 
-/* BUSINESSES */
+/* =========================
+   BUSINESS SLIDE
+========================= */
+
 #businesses-slide
 {
-    position: relative;
-
     background-image: url("../img/bussiness.jpg");
     background-color: #020814;
     background-repeat: no-repeat;
@@ -291,14 +355,11 @@ h1
     background-position: center center;
     background-attachment: fixed;
 
-    overflow: hidden;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
 
-    padding: 0 8%;
-    box-sizing: border-box;
+    padding: 0 clamp(40px, 8vw, 160px);
 }
 
 #businesses-slide::before
@@ -307,22 +368,16 @@ h1
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
-        180deg,
-        rgba(2, 8, 20, 0.20) 0%,
-        rgba(2, 8, 20, 0.45) 35%,
-        rgba(4, 18, 45, 0.75) 65%,
-        rgba(2, 8, 20, 0.95) 100%
-    );
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 8, 20, 0.20) 0%,
+            rgba(2, 8, 20, 0.45) 35%,
+            rgba(4, 18, 45, 0.75) 65%,
+            rgba(2, 8, 20, 0.95) 100%
+        );
 
     z-index: 1;
-}
-
-#businesses-slide h1,
-#businesses-slide p
-{
-    position: relative;
-    z-index: 2;
 }
 
 #businesses-slide h1
@@ -330,13 +385,9 @@ h1
     grid-column: 1;
     justify-self: start;
 
-    margin: 0;
-
     color: #EAF6FF;
-
-    font-size: clamp(60px, 7vw, 120px);
-    line-height: 0.95;
     text-align: left;
+    font-size: clamp(82px, 7.2vw, 190px);
 
     text-shadow:
         0 0 10px rgba(0, 184, 255, 0.9),
@@ -349,24 +400,19 @@ h1
     grid-column: 2;
     justify-self: end;
 
-    max-width: 650px;
-    margin: 0;
+    max-width: min(850px, 38vw);
 
     color: #D9EFFF;
-
-    font-size: clamp(18px, 1.5vw, 24px);
-    line-height: 1.7;
     text-align: right;
-
-    text-shadow:
-        0 0 8px rgba(0, 0, 0, 0.95);
+    font-size: clamp(22px, 1.65vw, 38px);
 }
 
-/* PERSONAL */
+/* =========================
+   PERSONAL SLIDE
+========================= */
+
 #personal-slide
 {
-    position: relative;
-
     background-image: url("../img/personal.png");
     background-color: #020703;
     background-repeat: no-repeat;
@@ -374,14 +420,11 @@ h1
     background-position: center center;
     background-attachment: fixed;
 
-    overflow: hidden;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
 
-    padding: 0 8%;
-    box-sizing: border-box;
+    padding: 0 clamp(40px, 8vw, 160px);
 }
 
 #personal-slide::before
@@ -390,22 +433,16 @@ h1
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
-        180deg,
-        rgba(2, 7, 3, 0.15) 0%,
-        rgba(2, 7, 3, 0.35) 35%,
-        rgba(3, 20, 10, 0.75) 65%,
-        rgba(2, 7, 3, 0.95) 100%
-    );
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 7, 3, 0.15) 0%,
+            rgba(2, 7, 3, 0.35) 35%,
+            rgba(3, 20, 10, 0.75) 65%,
+            rgba(2, 7, 3, 0.95) 100%
+        );
 
     z-index: 1;
-}
-
-#personal-slide h1,
-#personal-slide p
-{
-    position: relative;
-    z-index: 2;
 }
 
 #personal-slide h1
@@ -413,14 +450,9 @@ h1
     grid-column: 2;
     justify-self: end;
 
-    margin: 0;
-
     color: #F2FFF8;
-
-    font-size: clamp(60px, 7vw, 120px);
-    line-height: 0.95;
-
     text-align: right;
+    font-size: clamp(90px, 7.8vw, 205px);
 
     text-shadow:
         0 0 10px rgba(0, 255, 136, 0.9),
@@ -433,25 +465,20 @@ h1
     grid-column: 2;
     justify-self: end;
 
-    max-width: 650px;
-    margin-top: 20px;
+    margin-top: 24px;
+    max-width: min(900px, 42vw);
 
     color: #DFFFEF;
-
-    font-size: clamp(18px, 1.5vw, 24px);
-    line-height: 1.7;
-
     text-align: right;
-
-    text-shadow:
-        0 0 8px rgba(0, 0, 0, 0.95);
+    font-size: clamp(22px, 1.75vw, 40px);
 }
 
-/* WRESTLING */
+/* =========================
+   WRESTLING SLIDE
+========================= */
+
 #wrestling-slide
 {
-    position: relative;
-
     background-image: url("../img/wrestling.png");
     background-color: #0A0000;
     background-repeat: no-repeat;
@@ -459,17 +486,13 @@ h1
     background-position: center center;
     background-attachment: fixed;
 
-    overflow: hidden;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    padding: 0 clamp(40px, 8vw, 160px);
     text-align: center;
-
-    padding: 0 8%;
-    box-sizing: border-box;
 }
 
 #wrestling-slide::before
@@ -478,35 +501,23 @@ h1
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
-        180deg,
-        rgba(10, 0, 0, 0.15) 0%,
-        rgba(25, 0, 0, 0.35) 35%,
-        rgba(45, 0, 0, 0.75) 65%,
-        rgba(10, 0, 0, 0.95) 100%
-    );
+    background:
+        linear-gradient(
+            180deg,
+            rgba(10, 0, 0, 0.15) 0%,
+            rgba(25, 0, 0, 0.35) 35%,
+            rgba(45, 0, 0, 0.75) 65%,
+            rgba(10, 0, 0, 0.95) 100%
+        );
 
     z-index: 1;
 }
 
-#wrestling-slide h1,
-#wrestling-slide p,
-#wrestling-slide a
-{
-    position: relative;
-    z-index: 2;
-}
-
 #wrestling-slide h1
 {
-    margin: 0 0 25px 0;
-
     color: #FFF5F5;
-
-    font-size: clamp(60px, 7vw, 120px);
-    line-height: 0.95;
-
     text-align: center;
+    font-size: clamp(90px, 7.5vw, 200px);
 
     text-shadow:
         0 0 10px rgba(255, 30, 30, 0.95),
@@ -516,44 +527,188 @@ h1
 
 #wrestling-slide p
 {
-    max-width: 850px;
-    margin: 0;
+    max-width: min(1000px, 60vw);
+    margin-top: 20px;
 
     color: #FFEAEA;
-
-    font-size: clamp(18px, 1.5vw, 24px);
-    line-height: 1.7;
-
     text-align: center;
-
-    text-shadow:
-        0 0 8px rgba(0, 0, 0, 0.95);
+    font-size: clamp(22px, 1.7vw, 38px);
 }
 
-/* THUMBNAILS */
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.btn2
+{
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: clamp(24px, 2vw, 42px);
+    padding:
+        clamp(12px, 0.9vw, 20px)
+        clamp(24px, 2vw, 44px);
+
+    background: transparent;
+    color: white;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    font-family: "Anta", sans-serif;
+    font-weight: 700;
+    font-size: clamp(14px, 0.95vw, 22px);
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    overflow: hidden;
+    isolation: isolate;
+
+    z-index: 10;
+    transition: 0.3s ease;
+}
+
+.btn2 .spn2
+{
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.btn2::before,
+.btn2::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+}
+
+.btn2::before
+{
+    z-index: -2;
+}
+
+.btn2::after
+{
+    z-index: -1;
+}
+
+.btn2:hover
+{
+    transform: translateY(-4px);
+}
+
+.btn2:hover::before
+{
+    transform: translateY(-100%);
+}
+
+.btn2:hover::after
+{
+    transform: scaleX(0);
+    transition-delay: 0.15s;
+}
+
+.btn-home
+{
+    border: 2px solid #B14DFF;
+    color: #FFFFFF;
+    box-shadow: 0 0 15px rgba(177,77,255,.4);
+}
+
+.btn-home::before,
+.btn-home::after
+{
+    background: rgba(20,0,35,.95);
+}
+
+.btn-business
+{
+    border: 2px solid #00B8FF;
+    color: #EAF6FF;
+    box-shadow: 0 0 15px rgba(0,184,255,.4);
+}
+
+.btn-business::before,
+.btn-business::after
+{
+    background: rgba(2,8,20,.95);
+}
+
+.btn-personal
+{
+    border: 2px solid #00FF88;
+    color: #F2FFF8;
+    box-shadow: 0 0 15px rgba(0,255,136,.4);
+}
+
+.btn-personal::before,
+.btn-personal::after
+{
+    background: rgba(2,7,3,.95);
+}
+
+.btn-wrestling
+{
+    border: 2px solid #FF2D2D;
+    color: #FFF5F5;
+    box-shadow: 0 0 15px rgba(255,45,45,.4);
+}
+
+.btn-wrestling::before,
+.btn-wrestling::after
+{
+    background: rgba(10,0,0,.95);
+}
+
+#businesses-slide .btn2
+{
+    grid-column: 1;
+    justify-self: start;
+}
+
+#personal-slide .btn2
+{
+    grid-column: 2;
+    justify-self: end;
+}
+
+#wrestling-slide .btn2
+{
+    align-self: center;
+}
+
+/* =========================
+   THUMBNAILS
+========================= */
+
 .slide-thumbs
 {
     position: absolute;
-    right: 35px;
-    bottom: 35px;
+    right: clamp(18px, 3vw, 65px);
+    bottom: clamp(18px, 3vw, 65px);
 
     z-index: 20;
 
     display: flex;
-    gap: 14px;
+    gap: clamp(8px, 1vw, 18px);
 }
 
 .slide-thumbs button
 {
-    width: 105px;
-    height: 68px;
+    width: clamp(82px, 6vw, 170px);
+    height: clamp(54px, 4vw, 105px);
 
     padding: 0;
+    overflow: hidden;
 
     border: 2px solid rgba(255, 255, 255, 0.35);
     border-radius: 14px;
-
-    overflow: hidden;
 
     background: transparent;
     cursor: pointer;
@@ -588,552 +743,348 @@ h1
     object-fit: cover;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px)
+/* =====================================================
+   HERO RESPONSIVE SYSTEM
+===================================================== */
+
+@media (max-width: 1400px)
 {
     #projects
     {
-        height: clamp(700px, 90vh, 950px);
+        min-height: 660px;
+    }
+
+    .project-slide h1
+    {
+        font-size: clamp(58px, 7vw, 130px);
+    }
+
+    .project-slide p
+    {
+        font-size: clamp(18px, 2vw, 28px);
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 1024px)
+{
+    #projects
+    {
+        height: 78vh;
+        min-height: 580px;
+        max-height: 760px;
     }
 
     #businesses-slide,
     #personal-slide
     {
         grid-template-columns: 1fr;
-        padding: 0 7%;
         text-align: center;
     }
 
     #businesses-slide h1,
     #businesses-slide p,
     #personal-slide h1,
-    #personal-slide p
+    #personal-slide p,
+    #businesses-slide .btn2,
+    #personal-slide .btn2
     {
         grid-column: 1;
         justify-self: center;
         text-align: center;
     }
 
-    #businesses-slide h1,
-    #personal-slide h1
-    {
-        margin-bottom: 25px;
-    }
-
-    #wrestling-slide
-    {
-        padding: 0 7%;
-    }
-
-    #wrestling-slide h1
-    {
-        font-size: clamp(48px, 10vw, 80px);
-    }
-
+    #wrestling-slide h1,
     #wrestling-slide p
     {
-        font-size: clamp(16px, 4vw, 20px);
+        text-align: center;
     }
 
     .slide-thumbs
     {
-        right: 50%;
-        bottom: 25px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+}
 
-        transform: translateX(50%);
+@media (max-width: 768px)
+{
+    .navigation-bar-text
+    {
+        height: 58px;
+    }
 
-        width: 90%;
+    .logo
+    {
+        width: 58px;
+        flex-basis: 58px;
+    }
+
+    .nav-text a
+    {
+        font-size: 11px;
+        letter-spacing: 0.8px;
+    }
+
+    #projects
+    {
+        height: clamp(500px, 72svh, 640px);
+        min-height: unset;
+        max-height: none;
+    }
+
+    .project-slide
+    {
+        display: flex !important;
+        flex-direction: column;
         justify-content: center;
-        flex-wrap: wrap;
+        align-items: center;
+
+        gap: 16px;
+
+        padding:
+            64px
+            24px
+            92px;
+
+        text-align: center;
+        background-attachment: scroll !important;
+        background-size: cover;
+    }
+
+    #home-slide,
+    #businesses-slide,
+    #personal-slide,
+    #wrestling-slide
+    {
+        background-position: center top;
+    }
+
+    .project-slide h1,
+    #home-slide h1,
+    #businesses-slide h1,
+    #personal-slide h1,
+    #wrestling-slide h1
+    {
+        font-size: clamp(38px, 10vw, 66px);
+        line-height: 1;
+        text-align: center;
+        margin: 0;
+    }
+
+    .project-slide p,
+    #home-slide p,
+    #businesses-slide p,
+    #personal-slide p,
+    #wrestling-slide p
+    {
+        max-width: 92%;
+        font-size: clamp(14px, 3.7vw, 18px);
+        line-height: 1.45;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #businesses-slide .btn2,
+    #personal-slide .btn2,
+    #wrestling-slide .btn2,
+    #home-slide .btn2
+    {
+        align-self: center;
+        justify-self: center;
+        margin-top: 6px;
+    }
+
+    .btn2
+    {
+        padding: 11px 24px;
+        font-size: 13px;
+    }
+
+    .slide-thumbs
+    {
+        width: 96%;
+        bottom: 14px;
+
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 7px;
     }
 
     .slide-thumbs button
     {
-        width: 75px;
-        height: 50px;
+        width: clamp(54px, 18vw, 74px);
+        height: clamp(36px, 11vw, 48px);
+        border-radius: 10px;
     }
 }
-/* =========================
-   BUTTONS
-========================= */
 
-.btn2
+@media (max-width: 480px)
 {
-    position: relative;
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 35px;
-    padding: 15px 30px;
-
-    text-transform: uppercase;
-    text-decoration: none;
-
-    font-weight: 600;
-    font-size: 18px;
-
-    background: transparent;
-
-    cursor: pointer;
-    overflow: hidden;
-
-    isolation: isolate;
-
-    z-index: 10;
-
-    transition: .3s ease;
-}
-
-.btn2 .spn2
-{
-    position: relative;
-    z-index: 5;
-
-    pointer-events: none;
-}
-
-.btn2::before
-{
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    z-index: -2;
-
-    transition: .3s ease-out;
-
-    pointer-events: none;
-}
-
-.btn2::after
-{
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    z-index: -1;
-
-    transition: .3s ease-out;
-
-    pointer-events: none;
-}
-
-.btn2:hover::before
-{
-    transform: translateY(-100%);
-}
-
-.btn2:hover::after
-{
-    transform: scaleX(0);
-    transition-delay: .15s;
-}
-
-/* HOME */
-
-.btn-home
-{
-    border: 2px solid #B14DFF;
-    color: #FFFFFF;
-
-    box-shadow:
-        0 0 15px rgba(177,77,255,.4);
-}
-
-.btn-home::before,
-.btn-home::after
-{
-    background: rgba(20,0,35,.95);
-}
-
-/* BUSINESS */
-
-.btn-business
-{
-    border: 2px solid #00B8FF;
-    color: #EAF6FF;
-
-    box-shadow:
-        0 0 15px rgba(0,184,255,.4);
-}
-
-.btn-business::before,
-.btn-business::after
-{
-    background: rgba(2,8,20,.95);
-}
-
-/* PERSONAL */
-
-.btn-personal
-{
-    border: 2px solid #00FF88;
-    color: #F2FFF8;
-
-    box-shadow:
-        0 0 15px rgba(0,255,136,.4);
-}
-
-.btn-personal::before,
-.btn-personal::after
-{
-    background: rgba(2,7,3,.95);
-}
-
-/* WRESTLING */
-
-.btn-wrestling
-{
-    border: 2px solid #FF2D2D;
-    color: #FFF5F5;
-
-    box-shadow:
-        0 0 15px rgba(255,45,45,.4);
-}
-
-.btn-wrestling::before,
-.btn-wrestling::after
-{
-    background: rgba(10,0,0,.95);
-}
-
-/* ANIMATION */
-
-.project-slide.active .btn2
-{
-    animation: buttonFadeUp .8s ease .5s both;
-}
-
-@keyframes buttonFadeUp
-{
-    from
+    #projects
     {
-        opacity: 0;
-        transform: translateY(40px);
+        height: clamp(470px, 68svh, 590px);
     }
 
-    to
+    .project-slide
     {
-        opacity: 1;
-        transform: translateY(0);
+        padding:
+            58px
+            18px
+            82px;
+
+        gap: 14px;
     }
-}
 
-/* =========================
-   BUTTON POSITIONING
-========================= */
-
-/* BUSINESS */
-#businesses-slide .btn2
-{
-    grid-column: 1;
-    justify-self: start;
-
-    margin-top: 30px;
-}
-
-/* PERSONAL */
-#personal-slide .btn2
-{
-    grid-column: 2;
-    justify-self: end;
-
-    margin-top: 30px;
-}
-
-/* WRESTLING */
-#wrestling-slide .btn2
-{
-    align-self: center;
-
-    margin-top: 35px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 900px)
-{
-    #businesses-slide .btn2,
-    #personal-slide .btn2,
-    #wrestling-slide .btn2
+    .project-slide h1,
+    #home-slide h1,
+    #businesses-slide h1,
+    #personal-slide h1,
+    #wrestling-slide h1
     {
-        justify-self: center;
-        align-self: center;
+        font-size: clamp(34px, 10.5vw, 54px);
+    }
 
-        margin-top: 25px;
+    .project-slide p,
+    #home-slide p,
+    #businesses-slide p,
+    #personal-slide p,
+    #wrestling-slide p
+    {
+        font-size: clamp(13px, 3.7vw, 16px);
+        line-height: 1.42;
+    }
+
+    .btn2
+    {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .slide-thumbs button
+    {
+        width: 52px;
+        height: 35px;
     }
 }
 
-.services-section,
-.project-categories
+@media (max-width: 380px)
 {
-    background:
-        radial-gradient(circle at center, rgba(138, 43, 226, 0.08), transparent 35%),
-        linear-gradient(135deg, #050505 0%, #0b0b0f 55%, #050505 100%);
-}
+    #projects
+    {
+        height: 455px;
+    }
 
+    .project-slide
+    {
+        padding-bottom: 76px;
+    }
+
+    .slide-thumbs button
+    {
+        width: 46px;
+        height: 32px;
+    }
+}
 /* =====================================================
-   GLOBAL COMPONENTS
+   HERO MOBILE COMPACT FIX
 ===================================================== */
 
-.dark-section
+@media (max-width: 768px)
 {
-    position: relative;
-
-    width: 100%;
-
-    background:
-        radial-gradient(circle at center, rgba(255, 0, 200, 0.08), transparent 40%),
-        linear-gradient(135deg,#050505 0%,#090909 55%,#050505 100%);
-
-    color:white;
-
-    overflow:hidden;
-}
-
-.section-container
-{
-    width:min(1500px,92%);
-    margin:auto;
-
-    padding:
-        clamp(70px,8vw,130px)
-        0;
-}
-
-.section-tag
-{
-    display:inline-flex;
-
-    align-items:center;
-
-    padding:8px 22px;
-
-    border-radius:999px;
-
-    font-family:"Anta",sans-serif;
-
-    font-size:clamp(13px,1vw,18px);
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    color:#00b8ff;
-
-    border:1px solid rgba(0,184,255,.35);
-
-    background:rgba(0,184,255,.08);
-
-    backdrop-filter:blur(10px);
-
-    box-shadow:
-        0 0 20px rgba(0,184,255,.15);
-}
-
-.section-title
-{
-    margin-top:25px;
-
-    font-family:"Audiowide",sans-serif;
-
-    font-size:clamp(42px,5vw,82px);
-
-    line-height:1.05;
-
-    color:white;
-
-    text-shadow:
-        0 0 20px rgba(0,184,255,.35);
-}
-
-.section-title span
-{
-    color:#00b8ff;
-}
-
-.section-text
-{
-    margin-top:30px;
-
-    max-width:720px;
-
-    font-family:"Anta",sans-serif;
-
-    font-size:clamp(17px,1.3vw,23px);
-
-    line-height:1.75;
-
-    color:#d5d5d5;
-}
-
-/* =====================================================
-   ABOUT
-===================================================== */
-
-.about-section .section-container
-{
-    display:grid;
-
-    grid-template-columns:
-        minmax(380px,540px)
-        1fr;
-
-    gap:90px;
-
-    align-items:center;
-}
-.about-visual
-{
-    position:relative;
-
-    height:750px;
-
-    display:flex;
-
-    align-items:flex-end;
-
-    justify-content:center;
-}
-.about-bg
-{
-    position:absolute;
-
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    border-radius:35px;
-
-    filter:
-        brightness(.45)
-        contrast(1.1);
-
-    transform:scale(1.05);
-}
-.about-visual::before
-{
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        radial-gradient(circle at center,
-        rgba(255, 0, 255, 0.18),
-        transparent 60%);
-
-    z-index:1;
-}
-#profile-photo
-{
-    position:relative;
-
-    z-index:2;
-
-    max-height:760px;
-
-    width:auto;
-
-    filter:
-        drop-shadow(0 20px 60px rgba(0,0,0,.65));
-
-    transition:
-        transform .6s ease;
-}
-
-.about-section:hover #profile-photo
-{
-    transform:
-        translateY(-18px)
-        scale(1.02);
-}
-.about-content
-{
-    position:relative;
-
-    z-index:3;
-}
-
-.about-content p
-{
-    margin-top:28px;
-}
-.contact-icons
-{
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:18px;
-
-    margin-top:40px;
-}
-
-.contact-icons a
-{
-    width:58px;
-    height:58px;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    border-radius:50%;
-
-    text-decoration:none;
-
-    color:white;
-
-    font-size:24px;
-
-    background:#101010;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    transition:.35s;
-}
-
-.contact-icons a:hover
-{
-    color:#00b8ff;
-
-    border-color:#00b8ff;
-
-    transform:
-        translateY(-8px);
-
-    box-shadow:
-        0 0 25px rgba(0,184,255,.35);
-}
-@media(max-width:1000px)
-{
-    .about-section .section-container
+    #projects
     {
-        grid-template-columns:1fr;
-
-        gap:60px;
+        height: 100px;
+        min-height: 0;
+        max-height: none;
     }
 
-    .about-visual
+    .project-slide
     {
-        height:500px;
+        position: relative !important;
+
+        min-height: clamp(520px, 120vw, 680px);
+        height: 100px;
+
+        padding:
+            80px
+            24px
+            110px;
+
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 18px;
+
+        text-align: center;
     }
 
-    #profile-photo
+    .project-slide:not(.active)
     {
-        max-height:520px;
+        position: absolute !important;
+    }
+
+    .project-slide h1
+    {
+        font-size: clamp(40px, 11vw, 64px);
+    }
+
+    .project-slide p
+    {
+        max-width: 92%;
+        font-size: clamp(14px, 3.8vw, 18px);
+        line-height: 1.45;
+    }
+
+    .btn2
+    {
+        margin-top: 4px;
+        padding: 11px 24px;
+        font-size: 13px;
+    }
+
+    .slide-thumbs
+    {
+        bottom: 18px;
     }
 }
 
+@media (max-width: 430px)
+{
+    .project-slide
+    {
+        min-height: clamp(500px, 118vw, 620px);
+
+        padding:
+            72px
+            20px
+            96px;
+
+        gap: 14px;
+    }
+
+    .project-slide h1
+    {
+        font-size: clamp(36px, 10vw, 54px);
+    }
+
+    .project-slide p
+    {
+        font-size: 14px;
+    }
+
+    .btn2
+    {
+        padding: 10px 22px;
+        font-size: 12px;
+    }
+
+    .slide-thumbs button
+    {
+        width: 56px;
+        height: 38px;
+    }
+}
