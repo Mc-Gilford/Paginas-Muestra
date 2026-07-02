@@ -1225,3 +1225,46 @@ section
         transform: translateX(8px);
     }
 }
+/* =========================
+   HAMBURGER VISIBILITY FIX
+========================= */
+
+.hamburger-menu,
+.mobile-nav-panel
+{
+    display: none !important;
+}
+
+/* Solo móvil */
+@media (max-width: 768px)
+{
+    .hamburger-menu
+    {
+        display: flex !important;
+    }
+
+    .mobile-nav-panel
+    {
+        display: flex !important;
+    }
+
+    .navigation-bar-text .nav-text
+    {
+        display: none !important;
+    }
+}
+
+/* Desktop / tablet grande */
+@media (min-width: 769px)
+{
+    .navigation-bar-text .nav-text
+    {
+        display: flex !important;
+    }
+
+    .hamburger-menu,
+    .mobile-nav-panel
+    {
+        display: none !important;
+    }
+}
